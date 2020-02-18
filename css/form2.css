@@ -37,14 +37,16 @@ span {
     margin-right: 33%;
     border: 10px white solid;
     background-color: black;
+    height: 330px;
+    width: 500px;
 }
 
 .innerBox {
     background-color: grey;
-    width: 580px;
     margin: 20px;
     padding-top: 20px;
     padding-bottom: 5px;
+    height: 270px;
 }
 
 #label {

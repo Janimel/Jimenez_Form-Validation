@@ -16,7 +16,7 @@
                 <br><br>
                 
                 <label id = "label" for = "pass">Password</label>
-                <input id = "pass" type= "password" name = "pass" onchange = "passCheck()" required> <span id = "passStrength"></span>
+                <input id = "pass" type= "password" name = "pass" onkeyup = "passCheck()" onkeydown = "passCheck()" required> <span id = "passStrength"></span>
                 <br><br>
                 
                 <label id = "label" for = "confirm">Confirm Password</label>
@@ -32,7 +32,7 @@
                 <br><br>
                 
                 <label id = "label" for = "email">Email</label>
-                <input id = "email" type= "email" name = "email" required>
+                <input id = "email" type= "email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name = "email" required>
                 <br><br>
                 
                 <input id = "register" type = button value = "Register" onclick = "validation()">

@@ -1,58 +1,111 @@
-function validation(p) {
+function validation() {
     
-    var login = document.getElementById("login");
-    var pass = document.getElementById("pass");
-    var confirm = document.getElementById("confirm");
-    var gender = document.getElementById("genderChoice");
-    var email = document.getElementById("email");
+    let login = logCheck();
+    let pass = password();
+    let confirm = confirmPassword();
+    let email = emailC();
     
+    if (login == true && pass == true && confirm == true && email == true) {
+        alert ("Login Credentials sent for processing...");
+    } else {
+        alert("Failed to submit form");
+    }  
+}
+
+function logCheck() {
+    let login = document.getElementById("login");
     if (login.value == "") {
-        style.backgroundColor = "red";
-    } 
-    
+        login.style.backgroundColor = "red";
+        return false;
+    } else {
+        login.style.backgroundColor = "green";
+        return true;
+    }
+}
+
+function password() {
+    let pass = document.getElementById("pass");
     if (pass.value == "") {
-        alert("Missing Password");
-    } 
-    
-    if (confirm.value == "" || confirm.value != pass.value) {
+        pass.style.backgroundColor = "red";
+        return false;
+    } else {
+        pass.style.backgroundColor = "green";
+        return true;
+    }
+}
+
+function confirmPassword() {
+    let confirm = document.getElementById("confirm");
+    if (samePassword() == false) {
         document.getElementById("samePass").innerHTML = "Passwords are not the same";
-    } 
-    
-    if (confirm.value == pass.value) {
+        confirm.style.backgroundColor = "red";
+        return false;
+    } else {
         document.getElementById("samePass").innerHTML = "";
-    } 
-    
-    if (gender.value == "") {
-        alert("Missing Gender");
-    } 
-    
+        confirm.style.backgroundColor = "green";
+        return true;
+    }
+}
+
+function emailC() {
+    let email = document.getElementById("email");
     if (email.value == "") {
         document.getElementById("emailWrong").innerHTML = "Mail is wrong";
-    } 
-    
-    if (email.value != "") {
+        email.style.backgroundColor = "red";
+        return false;
+     } else {
         document.getElementById("emailWrong").innerHTML = "";
-    }
-    
-    if (login.value != "" && pass.value != "" && pass.value != "" && confirm.value == pass.value && gender.value != "" && email.value != "") {
-        document.getElementsByClassName("logForm").submit();
-        alert ("Login Credentials sent for processing...");
-        document.getElementsByClassName("logForm").reset();
+        email.style.backgroundColor = "green";
+        return true;
     }
 }
 
 function passCheck() {
     
-    var password = document.getElementById("pass").value;
-    var strength = document.getElementById("passStrength");
+    let password = document.getElementById("pass").value;
+    let strength = document.getElementById("passStrength");
     
-    if (password.length = 8) {
-        strength.innerHTML = "Strong";
-    } else if (password.length = 5) {
-        strength.innerHTML = "Medium";
-    } else if (password.length = 3) {
-        strength.innerHTML = "Weak";
-    } else if (password.length = 0) {
+    if (password.length == 0) {
         strength.innerHTML = "";
+    } else if (password.length >= 1 && password.length < 4) {
+        strength.innerHTML = "Weak";
+    } else if (password.length >= 4 && password.length < 8) {
+        strength.innerHTML = "Medium";
+    } else if (password.length >= 8) {
+        strength.innerHTML = "Strong";
+    }
+}
+
+function samePassword() {
+
+    let password = document.getElementById("pass").value;
+    let confirm = document.getElementById("confirm").value;
+
+    if (password == "" && confirm == "") {
+        return false;
+    } else if (password != confirm) {
+        return false;
+    } else {
+        return true;
+    }
+
+}
+
+function submit() {
+    
+    let comparePass = samePassword();
+    let correct = emailC();
+    
+    if (comparePass == true) {
+        if (correct == true) {
+            alert ("Login Credentials sent for processing...");
+            document.getElementsByClassName("logForm").reset();
+        } else {
+            document.getElementById("emailWrong").innerHTML = "Mail is wrong";
+            document.getElementsByClassName("logForm").reset();
+        }
+    } else {
+        document.getElementById("samePass").innerHTML = "Passwords are not the same";
+        document.getElementsByClassName("logForm").reset();
     }
 }
