@@ -1,0 +1,79 @@
+input[type="text"], textarea {
+
+  background-color : white; 
+
+}
+
+input[type="password"], textarea {
+
+  background-color : white; 
+
+}
+
+input[type="email"], textarea {
+
+  background-color : white; 
+
+}
+
+label {
+    color: white;
+    font-family: arial;
+}
+
+p {
+    color: white;
+    font-family: arial;
+    margin: -10px 0px 6px 55px;
+    padding-bottom: 5px;   
+}
+
+span {
+    color: white;
+    font-family: arial;
+}
+.outerBox {
+    margin-left: 33%;
+    margin-right: 33%;
+    border: 10px white solid;
+    background-color: black;
+}
+
+.innerBox {
+    background-color: grey;
+    width: 580px;
+    margin: 20px;
+    padding-top: 20px;
+    padding-bottom: 5px;
+}
+
+#label {
+    margin-left: 60px;
+}
+
+#register {
+    margin-left: 60px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+#login {
+    margin-left: 101px;
+}
+
+#pass {
+    margin-left: 70px;
+}
+
+#confirm {
+    margin-left: 10px;
+}
+
+#genderChoice {
+    margin-left: 87px;
+    width: 173px;
+}
+
+#email {
+    margin-left: 101px;
+}

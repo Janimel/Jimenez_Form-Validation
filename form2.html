@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation 2</title>
+    <link rel = "stylesheet" href = "css/form2.css">
+    <script src = "js/form2.js"></script>
+</head>
+<body>
+    <div class = "outerBox">
+        <form class = "logForm">
+            <div class = "innerBox">
+                <label id = "label" for = "login">Login</label>
+                <input id = "login" type= "text" name = "login" required>
+                <br><br>
+                
+                <label id = "label" for = "pass">Password</label>
+                <input id = "pass" type= "password" name = "pass" onchange = "passCheck()" required> <span id = "passStrength"></span>
+                <br><br>
+                
+                <label id = "label" for = "confirm">Confirm Password</label>
+                <input id = "confirm" type= "password" name = "confirm" required> 
+                <br><br>
+                
+                <label id = "label" for = "gender">Gender</label>
+                <select id = "genderChoice" name = "gender" required>
+                    <option value = "male">male</option>
+                    <option value = "female">female</option>
+                    <option value = "other">other</option>
+                </select>
+                <br><br>
+                
+                <label id = "label" for = "email">Email</label>
+                <input id = "email" type= "email" name = "email" required>
+                <br><br>
+                
+                <input id = "register" type = button value = "Register" onclick = "validation()">
+                <br><br>
+                
+                <p id = "samePass"></p>
+                <p id = "emailWrong"></p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
