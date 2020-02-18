@@ -15,10 +15,10 @@ function validation() {
 function logCheck() {
     let login = document.getElementById("login");
     if (login.value == "") {
-        login.style.backgroundColor = "red";
+        login.style.backgroundColor = "#F99";
         return false;
     } else {
-        login.style.backgroundColor = "green";
+        login.style.backgroundColor = "#9F9";
         return true;
     }
 }
@@ -26,10 +26,10 @@ function logCheck() {
 function password() {
     let pass = document.getElementById("pass");
     if (pass.value == "") {
-        pass.style.backgroundColor = "red";
+        pass.style.backgroundColor = "#F99";
         return false;
     } else {
-        pass.style.backgroundColor = "green";
+        pass.style.backgroundColor = "#9F9";
         return true;
     }
 }
@@ -38,24 +38,25 @@ function confirmPassword() {
     let confirm = document.getElementById("confirm");
     if (samePassword() == false) {
         document.getElementById("samePass").innerHTML = "Passwords are not the same";
-        confirm.style.backgroundColor = "red";
+        confirm.style.backgroundColor = "#F99";
         return false;
     } else {
         document.getElementById("samePass").innerHTML = "";
-        confirm.style.backgroundColor = "green";
+        confirm.style.backgroundColor = "#9F9";
         return true;
     }
 }
 
 function emailC() {
     let email = document.getElementById("email");
-    if (email.value == "") {
+    let check = /\S+@\S+\.\S+/.test(email);
+    if (check == false) {
         document.getElementById("emailWrong").innerHTML = "Mail is wrong";
-        email.style.backgroundColor = "red";
+        email.style.backgroundColor = "#F99";
         return false;
      } else {
         document.getElementById("emailWrong").innerHTML = "";
-        email.style.backgroundColor = "green";
+        email.style.backgroundColor = "#9F9";
         return true;
     }
 }
